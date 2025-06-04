@@ -1,0 +1,36 @@
+Alternative Email Provider Setup Instructions:
+
+If you prefer not to use Gmail SMTP due to 2-Step Verification or "Less secure app access" restrictions, you can use a transactional email service provider. These services offer reliable SMTP servers and APIs for sending emails securely.
+
+Popular options include:
+
+1. SendGrid
+   - Sign up at https://sendgrid.com/
+   - Create an API key for SMTP
+   - Use smtp.sendgrid.net as EMAIL_HOST
+   - Use port 587 or 465
+   - Use your SendGrid username (usually "apikey") as EMAIL_USER
+   - Use the API key as EMAIL_PASS
+
+2. Mailgun
+   - Sign up at https://www.mailgun.com/
+   - Verify your domain
+   - Get SMTP credentials from the dashboard
+   - Use smtp.mailgun.org as EMAIL_HOST
+   - Use port 587 or 465
+   - Use your Mailgun SMTP username and password
+
+3. Amazon SES
+   - Set up AWS SES service
+   - Verify your domain/email
+   - Generate SMTP credentials
+   - Use the provided SMTP endpoint as EMAIL_HOST
+   - Use port 587 or 465
+   - Use SMTP username and password from AWS SES
+
+General Steps to Configure:
+- Update your .env file with the new EMAIL_HOST, EMAIL_PORT, EMAIL_USER, and EMAIL_PASS values.
+- Restart your backend server to apply changes.
+- Test sending emails using the new provider.
+
+Would you like me to help you set up one of these providers or generate example .env configurations for them?
